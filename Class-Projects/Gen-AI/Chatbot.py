@@ -1,14 +1,15 @@
 import os
-
 from google import genai
+from dotenv import load_dotenv
 
-# Keep API key private
-api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise RuntimeError("Set GEMINI_API_KEY before running this chatbot.")
+load_dotenv()
 
-client = genai.Client(api_key=api_key)
-
+# ----------------------------
+# Gemini API
+# ----------------------------
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
 my_data = """
 Summary:
 Computer Science Engineering

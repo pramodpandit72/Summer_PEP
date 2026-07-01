@@ -1,13 +1,15 @@
 import os
-
 from google import genai
+from dotenv import load_dotenv
 
-# Keep API key private
-api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise RuntimeError("Set GEMINI_API_KEY before running this chatbot.")
+load_dotenv()
 
-client = genai.Client(api_key=api_key)
+# ----------------------------
+# Gemini API
+# ----------------------------
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
 
 my_data = """
 Summary:
@@ -44,19 +46,19 @@ Question:
 {question}
 """
 
-try:
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
 
-    print("\nBot:", response.text)
+        print("\nBot:", response.text)
 
-    # Save chat history
-    with open("chat_history.txt", "a", encoding="utf-8") as file:
-        file.write(f"User: {question}\n")
-        file.write(f"Bot: {response.text}\n")
-        file.write("-" * 50 + "\n")
+        # Save chat history
+        with open("chat_history.txt", "a", encoding="utf-8") as file:
+            file.write(f"User: {question}\n")
+            file.write(f"Bot: {response.text}\n")
+            file.write("-" * 50 + "\n")
 
-except Exception as e:
-    print("\nError:", e)
+    except Exception as e:
+        print("\nError:", e)

@@ -1,0 +1,6 @@
+User: hii
+Bot: Hello! How can I help you today?
+--------------------------------------------------
+User: get lost
+Bot: As Ankit Kumar's personal AI assistant, I am here to help you with information regarding his education, skills, projects, and experience. Please let me know if you have any questions about Ankit.
+--------------------------------------------------

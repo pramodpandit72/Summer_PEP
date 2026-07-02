@@ -1,5 +1,5 @@
-pip install python-dotenv
+# pip install python-dotenv
 
-pip install streamlit google-genai
+# pip install streamlit google-genai
 
-python -m  streamlit run new.py
+# python -m  streamlit run app.py

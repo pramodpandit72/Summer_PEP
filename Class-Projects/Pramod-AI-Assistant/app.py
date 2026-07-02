@@ -27,8 +27,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤖 Pramod AI Resume Assistant")
-st.write("Ask me anything about Mukund or any general question.")
+st.title("🤖 Pramod AI Assistant")
+st.write("Ask me anything about Pramod or any general question.")
 
 # ----------------------------
 # Chat History
@@ -55,7 +55,7 @@ if question:
         st.markdown(question)
 
     prompt = f"""
-You are Pramod Kumar's AI Assistant.
+You are Pramod's AI Assistant.
 
 Rules:
 1. Answer using the resume if possible.

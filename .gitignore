@@ -1,3 +1,10 @@
 # Local Gen-AI chatbot scripts (keep local, do not push)
 Gen-AI/Chatbot.py
 Gen-AI/Chatbot-2.py
+
+# YOLO demo outputs and downloaded assets
+Trainer - 2/Backend-GenAI/output.mp4
+Trainer - 2/Backend-GenAI/summer.mp4
+Trainer - 2/Backend-GenAI/yolo11n.pt
+Trainer - 2/Backend-GenAI/yolo10n.pt
+Trainer - 2/Backend-GenAI/__pycache__/

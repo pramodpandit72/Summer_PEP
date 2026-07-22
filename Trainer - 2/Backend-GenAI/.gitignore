@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Generated outputs and large local artifacts
+*.mp4
+*.docx
+*.pdf
+*.pt
+output.mp4
+summer.mp4

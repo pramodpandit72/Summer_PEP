@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.12
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:8.2.2
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+
+  order_service:
+    build: ./ORDER_SERVICE
+    container_name: ORDER_SERVICE
+    depends_on:
+      - kafka
+    ports:
+      - "3000:3000"
+    # environment:
+    #   - KAFKA_BROKERS=kafka:9092
+
+  inventory-service:
+    build: ./INVENTORY_SERVICE
+    container_name: INVENTORY_SERVICE
+    depends_on:
+      - kafka
+    ports:
+      - "3000:3000"
+
+  email-service:
+    build: ./EMAIL_SERVICE
+    container_name: EMAIL_SERVCE
+    depends_on:
+      - kafka
+    ports:
+      - "3000:3000"

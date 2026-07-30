@@ -1,0 +1,18 @@
+{
+  "name": "inventery_service",
+  "version": "1.0.0",
+  "description": "This is the Micre Service for the Inventery Management.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node consumer.js",
+    "dev": "nodemon consumer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "nodemon": "^3.1.14"
+  }
+}

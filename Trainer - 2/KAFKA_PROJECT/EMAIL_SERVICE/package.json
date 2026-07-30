@@ -1,0 +1,14 @@
+{
+  "name": "email_service",
+  "version": "1.0.0",
+  "description": "This is the email platform managed by brokers.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node consumer.js",
+    "dev": "nodemon consumer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

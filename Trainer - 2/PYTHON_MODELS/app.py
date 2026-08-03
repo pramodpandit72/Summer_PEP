@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-from transformers import pipeline
+from transformers import pipeline  # to run-> streamlit run app.py
 import torch
 
 st.set_page_config(page_title="Emotion Detection")

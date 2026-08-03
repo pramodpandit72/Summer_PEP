@@ -22,6 +22,13 @@ Approach...?
 - Google
 - OpenAI
   
+# FAST API
+- Modern Python Framework
+- REST API in python
+- Equivalent to Express.js, Springboot
 
-
-<!-- // streamlit run app.py -->
+# Use of FAST API:
+- REST API (GET, PUT, POST, etc)
+- MACHINE LEARNING API's
+- AI application
+- Microservices in Python

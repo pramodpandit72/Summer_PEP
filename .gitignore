@@ -2,6 +2,11 @@
 Gen-AI/Chatbot.py
 Gen-AI/Chatbot-2.py
 
+# Local environment secrets
+.env
+*.env
+Trainer - 3/.env
+
 # YOLO demo outputs and downloaded assets
 Trainer - 2/Backend-GenAI/output.mp4
 Trainer - 2/Backend-GenAI/summer.mp4
